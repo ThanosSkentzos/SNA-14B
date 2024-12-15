@@ -16,4 +16,31 @@ def get_streets() -> nx.Graph:
     edgelist = [(int(e.source()), int(e.target())) for e in list(g.edges())]
     G = nx.from_edgelist(edgelist)
     return G
+
+def get_dataset(name)->nx.Graph:
+    g = gt.collection.ns[name]
+    edgelist = [(int(e.source()), int(e.target())) for e in list(g.edges())]
+    G = nx.from_edgelist(edgelist)
+    return G
+#%%
+import networkx as nx
+G = get_terror()
+nx.write_gml(G,"terror.gml")
+nx.write_edgelist(G,"terror.txt")
+
+S = get_streets()
+nx.write_gml(S,"streets.gml")
+nx.write_edgelist(S,"streets.txt")
+
+name= "football"
+G = get_dataset(name)
+nx.write_gml(G,f"{name}.gml")
+nx.write_edgelist(G,f"{name}.txt")
+
+name= "polbooks"
+G = get_dataset(name)
+nx.write_gml(G,f"{name}.gml")
+nx.write_edgelist(G,f"{name}.txt")
 # %%
+print(G.number_of_nodes(),G.number_of_edges())
+adj = G.adjacency()
