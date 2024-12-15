@@ -3,4 +3,4 @@ max_itr: 1000000000
 max_num_groups: 20
 initial_num_groups: 2
 saved_data_name: football
-save_directory: results/
+save_directory: ../results/
