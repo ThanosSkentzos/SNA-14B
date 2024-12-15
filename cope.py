@@ -39,7 +39,7 @@ def get_node_from_group(group_memberships):
 def plot_results(node_memberships,graph,title,pos):
     top_membership = [max(memb_list) for memb_list in node_memberships]
     num_groups = max(top_membership) + 1 
-    colors = plt.cm.tab20(range(num_groups))  # Generate a set of colors
+    colors = plt.cm.tab10(range(num_groups))  # Generate a set of colors
     node_colors = [colors[t] for t in top_membership]
     patches = [mpatches.Patch(color=colors[g],label=f"Group {g}") for g in range(num_groups)]
     nx.draw(graph,node_size=42,node_color=node_colors,pos=pos)
