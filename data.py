@@ -25,22 +25,22 @@ def get_dataset(name)->nx.Graph:
 #%%
 import networkx as nx
 G = get_terror()
-nx.write_gml(G,"terror.gml")
-nx.write_edgelist(G,"terror.txt")
+nx.write_gml(G,"data/terror.gml")
+nx.write_edgelist(G,"data/terror.txt")
 
 S = get_streets()
-nx.write_gml(S,"streets.gml")
-nx.write_edgelist(S,"streets.txt")
+nx.write_gml(S,"data/streets.gml")
+nx.write_edgelist(S,"data/streets.txt")
 
 name= "football"
 G = get_dataset(name)
-nx.write_gml(G,f"{name}.gml")
-nx.write_edgelist(G,f"{name}.txt")
+nx.write_gml(G,f"data/{name}.gml")
+nx.write_edgelist(G,f"data/{name}.txt")
 
 name= "polbooks"
 G = get_dataset(name)
-nx.write_gml(G,f"{name}.gml")
-nx.write_edgelist(G,f"{name}.txt")
+nx.write_gml(G,f"data/{name}.gml")
+nx.write_edgelist(G,f"data/{name}.txt")
 # %%
 print(G.number_of_nodes(),G.number_of_edges())
 adj = G.adjacency()
