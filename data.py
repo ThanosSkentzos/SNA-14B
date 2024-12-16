@@ -41,6 +41,9 @@ name= "polbooks"
 G = get_dataset(name)
 nx.write_gml(G,f"data/{name}.gml")
 nx.write_edgelist(G,f"data/{name}.txt")
+
+name= "eu_airlines"
+G = get_dataset(name)
+nx.write_gml(G,f"data/{name}.gml")
+nx.write_edgelist(G,f"data/{name}.txt")
 # %%
-print(G.number_of_nodes(),G.number_of_edges())
-adj = G.adjacency()
