@@ -131,8 +131,11 @@ def process_dataset(dataset_name):
     # Initialize and infer Layered model
     if dataset_name == "football":
         n_layers=14
+    elif dataset_name == "eu_airlines":
+        n_layers=24
     else:
         n_layers=3
+
     # Initialize and infer Layered model
     layered = cp.LayeredCorePeriphery(n_layers, n_gibbs=100, n_mcmc=100)
     layered.infer(G)
