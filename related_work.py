@@ -250,6 +250,10 @@ def process_dataset(dataset_name):
 
     # Function to save nodes into pickle files
     def save_to_pickle(data, filename):
+        if 'street' in filename or 'street' in data:
+            print(80*'-')
+            print('Skipping streets')
+            return
         with open(filename, 'wb') as f:
             pickle.dump(data, f)
         print("--------------------------------------------------------------------")
