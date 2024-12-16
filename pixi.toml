@@ -1,7 +1,7 @@
 [project]
 authors = ["ThanosSkentzos <kalligerist@gmail.com>"]
 channels = ["conda-forge"]
-description = "Add a short description here"
+description = "Core Periphery environment"
 name = "SNA-14B"
 platforms = ["linux-64"]
 version = "0.1.0"
