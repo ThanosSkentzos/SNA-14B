@@ -1,10 +1,11 @@
+#%%
 """ get hcp results into a usable format"""
 import pickle
 terror_results = "./results/terror_configs.txt"
 street_results = "./results/streets_configs.txt"
 book_results = "./results/polbooks_configs.txt"
 football_results = "./results/football_configs.txt"
-
+airlines_results = "./results/airlines_configs.txt"
 
 def read_data(path):
     with open(path,"rb") as f:
@@ -55,9 +56,16 @@ save_data(group_memberships_hcp,"data/hcp_terror.pkl")
 results = football_results
 memberships_hcp = get_node_memberships(results)
 group_memberships_hcp = get_group_membersips(memberships_hcp)
-save_data(group_memberships_hcp,"hcp_football.pkl")
+save_data(group_memberships_hcp,"data/hcp_football.pkl")
 
 results = street_results
 memberships_hcp = get_node_memberships(results)
 group_memberships_hcp = get_group_membersips(memberships_hcp)
-save_data(group_memberships_hcp,"hcp_street.pkl")
+save_data(group_memberships_hcp,"data/hcp_street.pkl")
+
+
+results = airlines_results
+memberships_hcp = get_node_memberships(results)
+group_memberships_hcp = get_group_membersips(memberships_hcp)
+save_data(group_memberships_hcp,"data/hcp_airlines.pkl")
+print("Done.")
